@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one :payment
+  accepts_nested_attributes_for :payment
+
+
   after_create :welcome_send
 
     def welcome_send
