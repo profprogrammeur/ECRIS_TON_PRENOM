@@ -13,12 +13,11 @@
 
             <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto ">
-                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">A propos</a></li>
                 <li><a href="packages.html" class="nav-link">Jeux</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallerie</a></li>
-                <li><a href="pricing.html" class="nav-link">Premium</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a class="btn btn-custom-1" href="pricing.html" class="nav-link">Premium</a></li>
                 
                 <% if user_signed_in? %>
                   <%= link_to detroy_user_session_path, method: delete, class:"text-center btn btn-teal btn-custom-1 mt-4" do %>
