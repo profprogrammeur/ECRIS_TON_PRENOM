@@ -13,11 +13,12 @@
               <ul class="site-menu main-menu js-clone-nav mr-auto ">
                 <li class="active"><a href=<%= root_path %> class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">A propos</a></li>
-                <li><a href="packages.html" class="nav-link">Jeux</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallerie</a></li>
+                <li><a href="<%= games_path%>" class="nav-link">Jeux</a></li>
+                <li><a href="<%= items_path%> " class="nav-link">Gallerie</a></li>
                 <li><a href="pricing.html" class="nav-link">Premium</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                 <li><a href='user/index' class="nav-link">S'INSCRIRE</a></li>
+                <li><a href="<%= avatars_path%>" class="nav-link">Avatar</a></li>
+                <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>
+                 <li><a href='<%= new_user_registration_path %>' class="nav-link">S'INSCRIRE</a></li>
               </ul>
             </nav>
 

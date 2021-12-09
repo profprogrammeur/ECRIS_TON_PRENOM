@@ -1,4 +1,10 @@
 class AvatarsController < ApplicationController
-  def show
+  def index
+    @avatars = Avatar.all
   end
+  
+  def show
+    
+  end
+  
 end
