@@ -1,24 +1,54 @@
+<header class="site-navbar site-navbar-target" role="banner">
 
-<header class="site-navbar site-navbar-target " role="banner">
     <div class="container d-flex justify-content-around">
-    
-       <div class="site-logo mr-auto">
+        <div class="site-logo mr-auto">
           <a href=<%= root_path %>>ETP<span class="text-primary">.</span></a>
-        </div>     
+        </div>           
+     
     
         <div class="menu-wrap d-flex align-items-center">
           <span class="d-inline-block d-lg-none"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-black"></span></a></span>
 
+            
+
             <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto ">
-                <li class="active"><a href=<%= root_path %> class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">A propos</a></li>
                 <li><a href="<%= games_path%>" class="nav-link">Jeux</a></li>
                 <li><a href="<%= items_path%> " class="nav-link">Gallerie</a></li>
                 <li><a href="pricing.html" class="nav-link">Premium</a></li>
                 <li><a href="<%= avatars_path%>" class="nav-link">Avatar</a></li>
-                <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>
-                 <li><a href='<%= new_user_registration_path %>' class="nav-link">S'INSCRIRE</a></li>
+                <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>               
+                 <li class="nav-item"><a class="btn btn-custom-1" href="pricing.html" class="nav-link">Premium</a></li>
+                
+                <header class="site-navbar site-navbar-target" role="banner">
+
+    <div class="container d-flex justify-content-around">
+        <div class="site-logo mr-auto">
+          <a href=<%= root_path %>>ETP<span class="text-primary">.</span></a>
+        </div>           
+     
+    
+        <div class="menu-wrap d-flex align-items-center">
+          <span class="d-inline-block d-lg-none"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-black"></span></a></span>
+
+            
+
+            <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto ">
+                <li><a href="<%= games_path%>" class="nav-link">Jeux</a></li>
+                <li><a href="<%= items_path%> " class="nav-link">Gallerie</a></li>
+                <li><a href="pricing.html" class="nav-link">Premium</a></li>
+                <li><a href="<%= avatars_path%>" class="nav-link">Avatar</a></li>
+                <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>               
+                 <li class="nav-item"><a class="btn btn-custom-1" href="pricing.html" class="nav-link">Premium</a></li>
+                
+                <% if user_signed_in? %>
+                  <%= link_to destroy_user_session_path, method: delete, class:"text-center btn btn-teal btn-custom-1 mt-4" do %>
+                  <div>Se déconnecter</div>
+                  <% end %>
+                <% else %>
+                <li class="nav-item"><a class="btn btn-primary" href="<%= new_user_session_path %>">Se connecter</a></li>
+                <% end %>
               </ul>
             </nav>
 
@@ -29,5 +59,21 @@
             </div>
         </div>
       </div>
-  
-</header>
+
+     
+
+    </header>
+              </ul>
+            </nav>
+
+            <div class="top-social ml-auto">
+              <a href="#"><span class="icon-facebook text-teal"></span></a>
+              <a href="#"><span class="icon-twitter text-success"></span></a>
+              <a href="#"><span class="icon-linkedin text-yellow"></span></a>
+            </div>
+        </div>
+      </div>
+
+     
+
+    </header>
