@@ -22,6 +22,15 @@
                 <li><a href="gallery.html" class="nav-link">Gallerie</a></li>
                 <li><a href="pricing.html" class="nav-link">Premium</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                
+                <% if user_signed_in? %>
+                  <%= link_to detroy_user_session_path, method: delete, class:"text-center btn btn-teal btn-custom-1 mt-4" do %>
+                  <div>Se déconnecter</div>
+                  <% end %>
+
+                <% else %>
+                <li class="nav-item"><a class="btn btn-primary" href="<%= new_user_session_path %>">Se connecter</a></li>
+                <% end %>
               </ul>
             </nav>
 
