@@ -76,3 +76,13 @@ Personnalisation de la charte graphique
 
 
 
+dans le new/registraton
+jai renmplacer <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+par <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form", class: 'cc_form' }) do |f| %>
+
+
+dans javascript/credit_card_form.js
+#Note above where we wrote $("[data-stripe=cvv]").remove();, if using a new account in stripe, change the cvv here with cvc, so data-stripe=cvc
+
+
+<%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
