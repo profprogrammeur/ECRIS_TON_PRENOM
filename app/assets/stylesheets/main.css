@@ -1,0 +1,12 @@
+.container-game {
+    display: flex;
+    justify-content: center;
+}
+
+.package {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
