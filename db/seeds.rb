@@ -8,3 +8,5 @@
 
   example = Item.new(category: "lapin")
   example.save
+
+  

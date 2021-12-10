@@ -1,0 +1,24 @@
+
+
+<% session[:score] = 0 %>
+if (document.getElementById("score").textContent<3) {
+  setTimeout(function(){
+    document.getElementById("btn1").classList.remove('bg-danger')
+    document.getElementById("btn2").classList.remove('bg-success')
+    document.getElementById("btn3").classList.remove('bg-danger')
+    document.getElementById("message").textContent="OU EST ECRIT : <%= @user.child_name.upcase %> ?"
+    }, 1000);
+  } else {
+    <%= @user.games.last.score=12 
+        @user.save
+    %>
+      setTimeout(function(){
+    document.getElementById("sub-container").innerHTML="";
+    document.getElementById("sub-container").insertAdjacentHTML("beforeend", '<%= image_tag("cat", {:style => "width:300px", class:"text-center"}) 
+         %>')
+       document.getElementById("sub-sub-container").insertAdjacentHTML("beforeend", '<%= link_to "ROOT", root_path(:score => 12000), class: "btn btn-success mt-5 zoom-in-zoom-out"  %>')
+   
+   }, 1500);
+}
+
+
