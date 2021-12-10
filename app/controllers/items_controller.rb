@@ -1,19 +1,19 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+      @category=Item.last.category
+      @gif=GetGif.new.perform(@category)
+    # @gif=GetGif.new.perform("snake")
   end
 
   def new
-  @category=Item.last.category
-  @gif=GetGif.new.perform(@category)
-    # @gif=GetGif.new.perform("snake")
+
   end
 
   def create
     Item.new(category: params[:category]).save
         # Item.new(category: "snake").save
-    redirect_to root_path 
+    redirect_to items_path 
   end
 
   def show

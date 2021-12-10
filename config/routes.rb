@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :games
   resources :carts 
-  # resources :items 
+  resources :items 
   resources :avatars 
 
 end
