@@ -7,12 +7,11 @@
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-59">
-						Sign Up
+						S'inscrire
 					</span>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="field">
   <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 			<span class="focus-input100"></span>
@@ -21,16 +20,22 @@
    </div>
   </div>
 
+  <div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Username...">
+						<span class="focus-input100"></span>
+					</div>
+
+
   <div class="field">
-  <div class="wrap-input100 validate-input" data-validate = "Password is required">
-  <span class="focus-input100"></span>
+    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+      <span class="focus-input100"></span>
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
-						
-					</div>
+			</div>
   </div>
 
   <div class="field">
@@ -45,7 +50,7 @@
   <div class="container-btn btn-primary py-4 btn-custom-1">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "S'inscrire" %>
   </div>
   </div>
   </div>
