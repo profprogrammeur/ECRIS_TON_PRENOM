@@ -11,7 +11,7 @@
       <%= form_tag(items_path, method: "post", class: "form", id: "gif-form")  do %>
       <div class="form-group">
           <%= label_tag "Recherche", nil, class: "form-label" %>
-          <%= text_field_tag :animal, nil, class: "form-control", placeholder: @animal %>
+          <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %>
       </div>
       <div class="text-center">
         <%= submit_tag("RECHERCHER", class: "btn btn-start-order ") %>
@@ -28,7 +28,7 @@
       <p class="card-text text-center">image fixe</p>
       </div>
       <div class="card-footer ">
-        <h6 class="text-center "> Snake</h6>
+        <h6 class="text-center "> <%=@category%></h6>
       </div>
     </div> 
     <div class="card bg-warning">
@@ -37,7 +37,7 @@
       <p class="card-text text-center">gif animé</p>
       </div>
       <div class="card-footer">
-        <h6 class="text-center"><%=@animal %></h6>
+        <h6 class="text-center"><%=@category %></h6>
       </div>
     </div>
   </div>
