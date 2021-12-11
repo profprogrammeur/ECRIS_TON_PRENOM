@@ -1,10 +1,10 @@
 
-<header class="site-navbar site-navbar-target bg-secondary" role="banner">
+<header class="site-navbar site-navbar-target color-b2" role="banner">
 
 
     <div class="container d-flex justify-content-around">
         <div class="site-logo mr-auto">
-          <a href=<%= root_path %>>ETP<span class="text-primary">.</span></a>
+          <a href=<%= root_path %>>ETP<span class="text-danger">.</span></a>
         </div>           
      
 
@@ -17,14 +17,14 @@
                 <li><a href="<%= items_path%> " class="nav-link">Gallerie</a></li>
                 <li><a href="<%= avatars_path%>" class="nav-link">Avatar</a></li>
                 <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>               
-                <li class="nav-item"><a class="btn btn-warning btn-custom-11 px-2" href="" class="nav-link">Premium</a></li>
+                <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="" class="nav-link">Premium</a></li>
                 
                 <% if user_signed_in? %>
-                  <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal btn-custom-1 " do %>
+                  <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal py-1 px-2 " do %>
                   <div>Se déconnecter</div>
                   <% end %>
                 <% else %>
-                <li class="nav-item"><a class="btn btn-primary  btn-custom-11 px-2" href="<%= new_user_session_path %>">Se connecter</a></li>
+                <li class="nav-item"><a class="btn btn-primary py-1 px-2" href="<%= new_user_session_path %>">Se connecter</a></li>
                 <% end %>
 
 
