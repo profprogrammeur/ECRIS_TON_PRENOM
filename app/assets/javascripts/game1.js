@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-  alert("assets/javascripts/game1.js")
+  // alert("assets/javascripts/game1.js")
   console.log("DOM Loaded !")
   function message(mes) {
     document.getElementById("message").textContent = mes

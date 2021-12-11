@@ -4,10 +4,28 @@ class GamesController < ApplicationController
     # @score = session[:score]
     @user = current_user
     g = Game.last
-    # g.score = @score
+    if  params[:score]
+      g.score = params[:score]
+    else 
+      g.score = 0
+    end
+    @score = g.score 
+    puts "#######################"
+    puts "score = #{g.score}"
     g.save
-
-
+    @Words=[]
+    name = @user.child_name.upcase
+    
+    
+    @Words.push(name)
+    loop do 
+      word =  name.chars.shuffle.join
+      if word != name
+        @Words.push(word)
+      end
+      break if @Words.count==9
+    end
+    @Words= @Words.shuffle
     
     
   end

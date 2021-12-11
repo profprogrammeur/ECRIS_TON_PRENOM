@@ -1,71 +1,69 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/show.html.erb</p>
-<h1>JEU DES CHATS</h1>
 
-<div class="container">
+
+<div class="container mt-5">
 
 
 
-  <h3>   <%= link_to "ROOT", root_path(), class: "nav-link" %> </h3>
+  <%# <h3>   <%= link_to "ROOT", root_path(), class: "nav-link" %> </h3>
 
                                      <%# root_path(:score => 0) %>
 
 
   <%# <h3> Session : <%= @session.inspect %> </h3>  
-   <div class= "d-flex justify-content-center text-success"><h1><%= %> SCORE: </h1><h1 id="score" class="text-center" > 0</h1></div>
+ <h5>SCORE PARAMS :<span id="score" class= "d-flex justify-content-center mt-5" ><%= @score %></span> </h5> 
+
+
   <div class="text-center" id="sub-container">
     <%# <h1 id="score" class="">OU EST : EVA ?</h1> %>
+ 
     <%= image_tag("emoji-smile-fill", {:style => "width:50px;", class: "unactivated smile"}) %>
     <%= image_tag("emoji-smile-fill", {:style => "width:50px;", class: "unactivated smile"}) %>
     <%= image_tag("emoji-smile-fill", {:style => "width:50px;", class: "unactivated smile"}) %>
-    <%= image_tag("emoji-frown-fill", {:style => "width:50px;", class: "unactivated-f frown" }) %>
-      <%= image_tag("emoji-frown-fill", {:style => "width:50px;", class: "unactivated-f frown" }) %>
-      <%= image_tag("emoji-frown-fill", {:style => "width:50px;", class: "unactivated-f frown" }) %>
-
   
+
+  <h1>NIVEAU : <%= @score %> </h1>
     <h1 id="message">où est écrit : <%=@user.child_name.upcase%> ?</h1>
+
+<h2>
+    <%=  
+   @Words
+    %>
+</h2>
+
+
+    <div class="m-3">
+      <%# <ul class="list-group" id="words"> %>
+        <% @Words.each do |word|  %>
+        
+        <%= link_to  word, "", class: "btn btn-info ",id: "", remote: true  %>
+
+        <% end %>
+      <%# </ul> %>
+     </div>
+
 
     <div class="m-3">
       <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info ",id: "btn1", remote: true  %>
-    <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-
+      <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
+       <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
     </div>
+
     <div class="m-3">
         <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-      <%= link_to @user.child_name.upcase, "", class: "btn btn-info",id: "btn2", remote: true  %>
-          <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-
+        <%= link_to @user.child_name.upcase, "", class: "btn btn-info",id: "btn2", remote: true  %>
+        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
     </div>
+
     <div class="m-3">
         <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-      <%= link_to @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn3", remote: true  %>
-          <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-
+        <%= link_to @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn3", remote: true  %>
+        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
     </div>
+ 
 
-
-
-  </div>
   <div class="text-center" id="sub-sub-container"></div>
 
 
-
- <ul>
-        <li class="nav-item">
-        email : <%= @user.email%>
-       
-        </li>
-        <li class="nav-item">
-         prénom enfant :  <%= @user.child_name%>
-         </li>
-          <li class="nav-item">
-         SCORE :  <%= @user.games.last.score%>
-         </li> <h3> 
-         <li class="nav-item">
-         @SCORE PARAMS :<%= @score %>
-         </li></h3>
-      </ul>
 </div>
     <%# <button type="button" class="btn btn-info">recevoir un email</button> %>
 
