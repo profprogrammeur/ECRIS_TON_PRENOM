@@ -10,7 +10,7 @@
 
 
   <%# <h3> Session : <%= @session.inspect %> </h3>  
- <h5>SCORE PARAMS :<span id="score" class= "d-flex justify-content-center mt-5" ><%= @score %></span> </h5> 
+ <h5>juste :<span id="score" class= "d-flex justify-content-center mt-5" >0</span> </h5> 
 
 
   <div class="text-center" id="sub-container">
@@ -21,50 +21,31 @@
     <%= image_tag("emoji-smile-fill", {:style => "width:50px;", class: "unactivated smile"}) %>
   
 
-  <h1>NIVEAU : <%= @score %> </h1>
+  <h1>NIVEAU : <span id="level"><%= @score%></span></h1>
     <h1 id="message">où est écrit : <%=@user.child_name.upcase%> ?</h1>
 
-<h2>
-    <%=  
-   @Words
-    %>
-</h2>
 
 
-    <div class="m-3">
+
+    <div class="m-3" id="words-div">
       <%# <ul class="list-group" id="words"> %>
         <% @Words.each do |word|  %>
-        
-        <%= link_to  word, "", class: "btn btn-info ",id: "", remote: true  %>
+
+         <% if word==@user.child_name.upcase %>
+          <%= link_to  word, "", class: "btn btn-secondary m-1 ",id: "child_name", remote: true  %>
+          <%else%> 
+          <%= link_to  word, "", class: "btn btn-secondary word m-1", remote: true  %>
+          <%end%>
 
         <% end %>
       <%# </ul> %>
-     </div>
-
-
-    <div class="m-3">
-      <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info ",id: "btn1", remote: true  %>
-      <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-       <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
     </div>
-
-    <div class="m-3">
-        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-        <%= link_to @user.child_name.upcase, "", class: "btn btn-info",id: "btn2", remote: true  %>
-        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-    </div>
-
-    <div class="m-3">
-        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-        <%= link_to @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn3", remote: true  %>
-        <%= link_to  @user.child_name.upcase.chars.shuffle.join, "", class: "btn btn-info",id: "btn1", remote: true  %>
-    </div>
- 
-
-  <div class="text-center" id="sub-sub-container"></div>
-
-
 </div>
+ 
+  <div class="text-center " id="sub-sub-container"></div>
+
+
+
     <%# <button type="button" class="btn btn-info">recevoir un email</button> %>
 
 

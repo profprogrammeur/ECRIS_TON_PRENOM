@@ -7,12 +7,16 @@ class GamesController < ApplicationController
     if  params[:score]
       g.score = params[:score]
     else 
-      g.score = 0
+      g.score = 1
     end
     @score = g.score 
     puts "#######################"
     puts "score = #{g.score}"
     g.save
+    if @score > 4
+      redirect_to(root_path)
+    end
+
     @Words=[]
     name = @user.child_name.upcase
     
