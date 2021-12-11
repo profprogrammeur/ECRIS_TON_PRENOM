@@ -464,7 +464,7 @@ background: #fdb62f;
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   width: 100%;
   padding: 1rem; }

@@ -1,4 +1,3 @@
-<body style="background-color: #b2b2b2;">
 
 <div class="limiter">
 		<div class="container-login100">
@@ -47,14 +46,14 @@
   </div>
 
   <div class="actions">
-  <div class="container-btn btn-outline-primary py-4 btn-custom-1">
+  <div class="container-btn btn btn-primary">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
-    <%= f.submit "S'inscrire" %>
+    <%= f.submit "S'inscrire", class: 'remove-submit-btn-style' %>
   </div>
   </div>
   </div>
 <% end %>
-</body>
+
 
 <%= render "devise/shared/links" %>
