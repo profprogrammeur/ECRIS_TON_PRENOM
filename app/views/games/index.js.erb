@@ -23,7 +23,7 @@ if (document.getElementById("score").textContent<3) {
     setTimeout(function(){
     
     document.getElementById("sub-container").innerHTML="";
-    document.getElementById("sub-container").insertAdjacentHTML("beforeend", '<%= image_tag("cat#{@score}", {:style => "width:300px", class:"text-center"}) 
+    document.getElementById("sub-container").insertAdjacentHTML("beforeend", '<%= image_tag("cat#{@score}.gif", {:style => "width:300px", class:"text-center"}) 
          %>')
                                                                                                               <%# games_path(:score => @score) %>
       document.getElementById("score").textContent = ""
