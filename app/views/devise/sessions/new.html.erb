@@ -1,14 +1,28 @@
-<h2>Log in</h2>
+<div class="limiter">
+		<div class="container-login100">
+			<div class="login100-more" ></div>
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+			
+					<span class="login100-form-title p-b-59">
+						Se connecter
+					</span>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
+    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+      <span class="focus-input100"></span>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  </div>
 
   <div class="field">
+    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+      <span class="focus-input100"></span>
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +33,16 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="container-btn btn btn-primary">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+    <%= f.submit "S'enregistrer",class: 'remove-submit-btn-style'  %>
   </div>
-<% end %>
+  </div>
 
+
+<div>
 <%= render "devise/shared/links" %>
+ </div>
+
+<% end %>

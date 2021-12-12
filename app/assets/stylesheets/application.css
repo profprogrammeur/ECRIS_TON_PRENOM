@@ -15,4 +15,6 @@
  *= require bootstrap
  *= require style
  *= require bootstrap-grid
+ *= require signup
+ *= require signup2
  */

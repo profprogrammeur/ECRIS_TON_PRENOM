@@ -272,6 +272,10 @@ h1, h2, h3, h4, h5,
       background: #fff;
       border-color: #fff;
       color: #000; }
+  .btn.btn-custom-1 {
+background: #fdb62f;
+
+  }  
 
 .btn-custom-1 {
   border-radius: 30px;
@@ -460,7 +464,7 @@ h1, h2, h3, h4, h5,
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   width: 100%;
   padding: 1rem; }
