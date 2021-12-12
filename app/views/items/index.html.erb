@@ -1,8 +1,3 @@
-<p>Find me in app/views/items/index.html.erb</p>
-<h1>Choisi ton Gif's</h1>
-
-
-
 
 <%# @gif['data'].first['images']['downsized']['url'] %>
 
@@ -17,7 +12,7 @@
           <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %>
       </div>
       <div class="text-center">
-        <%= submit_tag("RECHERCHER", class: "btn btn-start-order ") %>
+        <%= submit_tag("RECHERCHER", class: "btn btn-start-order btn-danger mb-4") %>
       </div>
       <%end%>
   </div>
