@@ -1,13 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
-      if Item.last == nil
-         Item.create(category: "chat")
-         @category=Item.last.category
-      else 
-        @category=Item.last.category
-      end
-      @gif=GetGif.new.perform(@category)
+  
+      @gif=GetGif.new.perform(params[:id])
     # @gif=GetGif.new.perform("snake")
   end
 
