@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_12_08_185351) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_12_08_185351) do
 
   create_table "items", force: :cascade do |t|
     t.string "url"
-    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
