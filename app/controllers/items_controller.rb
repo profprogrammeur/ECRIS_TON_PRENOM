@@ -1,7 +1,12 @@
 class ItemsController < ApplicationController
 
   def index
-      @category=Item.last.category
+      if Item.last == nil
+         Item.create(category: "chat")
+         @category=Item.last.category
+      else 
+        @category=Item.last.category
+      end
       @gif=GetGif.new.perform(@category)
     # @gif=GetGif.new.perform("snake")
   end
