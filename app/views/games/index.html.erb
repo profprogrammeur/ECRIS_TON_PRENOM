@@ -1,7 +1,11 @@
 
 
-<div class="container">
+<body style="background-color:#17a2b8;">
+</body>
 
+<div class="container-game d-flex h-100">
+
+    <div class="row align-self-center">
 
 
   <%# <h3>   <%= link_to "ROOT", root_path(), class: "nav-link" %> </h3>
@@ -23,6 +27,12 @@
 
   <h1>NIVEAU : <span id="level"><%= @score%></span></h1>
     <h1 id="message">où est écrit : <%=@user.child_name.upcase%> ?</h1>
+
+    <div class="container-g-1 d-flex h-100">
+            <div class="package text-center bg-white">
+                <div class="img-avatar">
+                    <%= image_tag "avatar-3.png", :alt => "avatar",style: "",class: "img-fluid " %>
+                    </div>
 
 
 
