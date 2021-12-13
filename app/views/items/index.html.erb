@@ -16,31 +16,21 @@
       </div>
       <%end%>
   </div>
-   
- <% @gif['data'].each do |gif|  %>
- <div  class="row mb-5 justify-content-center" >
-  <div class=" card-deck mr-5">
-    <div class="card bg-secondary">
-      <img class="card-img-top" src="<%= gif['images']['fixed_width_still']['url'] %>" alt="Card image cap">
-      <div class="card-body">
-      <p class="card-text text-center">image fixe</p>
+ <div class="col-lg-10 offset-lg-1">  
+
+
+    <div  class="card-columns  " >
+     <% @gif['data'].each do |gif|  %>
+      <div class=" card">
+          <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
       </div>
-      <div class="card-footer ">
-        <h6 class="text-center "> <%=@category%></h6>
-      </div>
-    </div> 
-    <div class="card bg-warning">
-      <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
-      <div class="card-body">
-      <p class="card-text text-center">gif animé</p>
-      </div>
-      <div class="card-footer">
-        <h6 class="text-center"><%=@category %></h6>
-      </div>
+    <%end%>    
     </div>
+      
   </div>
+ 
 </div>
-<%end%>   
+
 
 
 
