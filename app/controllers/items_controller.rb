@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
-      @category=Item.last.category
-      @gif=GetGif.new.perform(@category)
+      category=Cart.last.category
+      @gif=GetGif.new.perform(category)
     # @gif=GetGif.new.perform("snake")
   end
 

@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  example = Item.new(category: "lapin")
+  example = Cart.new(category: "lapin")
   example.save
 
-  player = Game.new(user_id: 1, score: 1)
+  player = Game.new(score: 1)
   player.save 
   puts "One player"
 
