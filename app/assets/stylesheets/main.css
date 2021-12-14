@@ -23,3 +23,25 @@ padding:0px;
   margin : 0 !important;
   padding: 0 !important;
 }
+
+.container-game {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.package {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  
+}
+
+.container {
+   max-width: 50px;
+
+}
+
+

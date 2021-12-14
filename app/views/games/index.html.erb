@@ -1,7 +1,11 @@
 
 
-<div class="container">
+<body style="background-color:#17a2b8;">
+</body>
 
+<div class="container-game d-flex h-100">
+
+    <div class="row align-self-center">
 
 
   <%# <h3>   <%= link_to "ROOT", root_path(), class: "nav-link" %> </h3>
@@ -10,10 +14,9 @@
 
 
   <%# <h3> Session : <%= @session.inspect %> </h3>  
- <h5 id="score" class= "d-flex justify-content-center mt-5" >0</h5> 
 
 
-  <div class="text-center" id="sub-container">
+  <div class="text-center mt-5" id="sub-container">
     <%# <h1 id="score" class="">OU EST : EVA ?</h1> %>
  
     <%= image_tag("emoji-smile-fill.svg", {:style => "width:50px;", class: "unactivated smile"}) %>
@@ -24,10 +27,11 @@
   <h1>NIVEAU : <span id="level"><%= @score%></span></h1>
     <h1 id="message">où est écrit : <%=@user.child_name.upcase%> ?</h1>
 
-
-
-
-    <div class="m-3" id="words-div">
+    
+            <div class="package text-center bg-white">
+          <h5 id="score" class= "d-flex justify-content-center mt-0 mb-5" >0</h5>
+    <div class="container-sm " id="words-div">
+    
       <%# <ul class="list-group" id="words"> %>
         <% @Words.each do |word|  %>
 
@@ -39,7 +43,10 @@
 
         <% end %>
       <%# </ul> %>
+      </div>
+      </div>
     </div>
+</div>
 </div>
  
   <div class="text-center " id="sub-sub-container"></div>
