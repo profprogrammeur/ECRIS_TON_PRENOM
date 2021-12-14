@@ -47,4 +47,7 @@ class GamesController < ApplicationController
      @user=current_user
   end
 
+  
+  
+
 end

@@ -9,4 +9,9 @@
   example = Item.new(category: "lapin")
   example.save
 
+  player = Game.new(user_id: 1, score: 1)
+  player.save 
+  puts "One player"
+
+
   
