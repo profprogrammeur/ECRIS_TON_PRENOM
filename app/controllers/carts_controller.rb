@@ -24,4 +24,16 @@ class CartsController < ApplicationController
 
     redirect_to carts_path 
   end
+
+
+  def update
+
+    puts "33333333333"
+    puts params[:id]
+
+    puts params[:gif_url]
+    puts "33333333333"
+
+  end
+
 end

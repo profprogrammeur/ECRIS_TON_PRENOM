@@ -89,9 +89,11 @@
 
           <div  class="card-columns 
           " >
-            <% @gif['data'].each do |gif|  %>
+            <% @gif['data'].each.with_index do |gif,index|  %>
               <div class=" card">
+              <%= link_to cart_path(index, :gif_url => gif['images']['fixed_width']['url']), class: "", remote: true, method: "PUT" do %>
                 <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
+                <% end %>
               </div>
             <%end%>    
             </div>

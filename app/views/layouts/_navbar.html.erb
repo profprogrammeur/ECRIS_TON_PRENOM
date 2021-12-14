@@ -15,18 +15,20 @@
 
                 <li><a href="<%= games_path%>" class="nav-link ">Jeux</a></li>
                 <li><a href="<%=%> " class="nav-link">Gallerie</a></li>
-                <li><a href="<%= avatars_path%>" class="nav-link">Avatar</a></li>
-                <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>               
-                <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="" class="nav-link">Premium</a></li>
+               <a href="<%= avatars_path%>" class="nav-link">Avatar</a>
+                            
+               
                 
                 <% if user_signed_in? %>
+                <li>  <a href="<%= carts_path%>" class="nav-link">Cart</a> </li>
                   <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal py-1 px-2 " do %>
                   <div>Se déconnecter</div>
+               
                   <% end %>
                 <% else %>
                 <li class="nav-item"><a class="btn btn-primary py-1 px-2" href="<%= new_user_session_path %>">Se connecter</a></li>
                 <% end %>
-
+                 <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="" class="nav-link">Premium</a></li>
 
               </ul>
             </nav>
