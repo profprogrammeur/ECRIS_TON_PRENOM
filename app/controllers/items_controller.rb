@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   def index
-  
-      @gif=GetGif.new.perform(params[:id])
+      category=Cart.last.category
+      @gif=GetGif.new.perform(category)
     # @gif=GetGif.new.perform("snake")
   end
 
@@ -11,7 +11,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.new(category: params[:category]).save
+    c=Cart.new(category: params[:category])
+    c.save
         # Item.new(category: "snake").save
     redirect_to items_path 
   end

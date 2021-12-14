@@ -1,5 +1,4 @@
 
-<p>Find me in app/views/carts/index.html.erb</p>
 
 
 <div class=" d-flex justify-content-around">
@@ -12,7 +11,24 @@
 
 
   <div class="">
+
+
+  <div>
+    <div id="gifSet"  class=" bg-teal d-flex justify-content-center" > 
+      <%= image_tag("cat1.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+      <%= image_tag("cat2.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+      <%= image_tag("cat3.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+      <%= image_tag("cat4.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+    </div>
+  </div>
+
     <div class="d-flex justify-content-center">
+
+
+
+
+
+
       <%# <%= link_to  'CHIEN', carts_path("chien"), class: "btn btn-secondary m-1 ",id: "_cat", remote: true  %> 
           <div class="d-flex flex-column">
            <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
@@ -87,14 +103,7 @@
   </div>
   
 
-  <div>
-    <div id="gifSet"  class=" bg-teal "> 
-      <%= image_tag("cat1.gif", {:style => "width:200px", class:"text-center m-2"}) %>
-      <%= image_tag("cat2.gif", {:style => "width:200px", class:"text-center m-2"}) %>
-      <%= image_tag("cat3.gif", {:style => "width:200px", class:"text-center m-2"}) %>
-      <%= image_tag("cat4.gif", {:style => "width:200px", class:"text-center m-2"}) %>
-    </div>
-  </div>
+
 
 </div>
 
