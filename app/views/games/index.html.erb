@@ -14,7 +14,6 @@
 
 
   <%# <h3> Session : <%= @session.inspect %> </h3>  
- <h5 id="score" class= "d-flex justify-content-center mt-5" >0</h5> 
 
 
   <div class="text-center" id="sub-container">
@@ -30,14 +29,8 @@
 
     
             <div class="package text-center bg-white">
-                <div class="img-avatar">
-                    <%= image_tag "avatar-3.png", :alt => "avatar",style: "",class: "img-fluid " %> 
-                    </div>
 
-
-
-
-    <div class="m-3" id="words-div">
+    <div class="container-sm " id="words-div">
     <h5 id="score" class= "d-flex justify-content-center mt-0 mb-5" >0</h5>
       <%# <ul class="list-group" id="words"> %>
         <% @Words.each do |word|  %>

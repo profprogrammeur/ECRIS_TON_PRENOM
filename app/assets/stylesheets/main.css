@@ -41,12 +41,13 @@ padding:0px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 500px;
   
 }
 
-.m-3 {
-  display: flex;
-  flex-direction: column;
+.container {
+   max-width: 50px;
+
 }
 
 .img-kid {
