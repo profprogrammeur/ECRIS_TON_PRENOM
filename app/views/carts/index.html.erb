@@ -16,7 +16,7 @@
       <%# <%= link_to  'CHIEN', carts_path("chien"), class: "btn btn-secondary m-1 ",id: "_cat", remote: true  %> 
           <div class="d-flex flex-column">
            <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
-                <%= text_field_tag :category, nil, class: "form-control", value: "rat",style:"visibility: hidden"%>
+                <%= text_field_tag :category, nil, class: "form-control", value: "cat",style:"visibility: hidden"%>
                 <div class="">
                 <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %>
                 </div>
