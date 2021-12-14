@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 2021_12_13_211532) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
-  create_table "carts_items", id: false, force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "cart_id", null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.integer "score"
     t.bigint "user_id"
@@ -46,6 +41,15 @@ ActiveRecord::Schema.define(version: 2021_12_13_211532) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "join_table_cart_items", force: :cascade do |t|
+    t.bigint "cart_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_join_table_cart_items_on_cart_id"
+    t.index ["item_id"], name: "index_join_table_cart_items_on_item_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +67,3 @@ ActiveRecord::Schema.define(version: 2021_12_13_211532) do
 
   add_foreign_key "carts", "users"
 end
-Carts_it
