@@ -63,3 +63,4 @@ ActiveRecord::Schema.define(version: 2021_12_13_211532) do
 
   add_foreign_key "carts", "users"
 end
+Carts_it

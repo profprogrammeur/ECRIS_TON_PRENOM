@@ -28,11 +28,14 @@ class CartsController < ApplicationController
 
   def update
 
-    puts "33333333333"
+    puts "3333333333333333333333333333"
     puts params[:id]
-
     puts params[:gif_url]
-    puts "33333333333"
+    puts "333333333333333333333333333333"
+
+   Item.create(url: params[:gif_url]).save
+        
+
 
   end
 
