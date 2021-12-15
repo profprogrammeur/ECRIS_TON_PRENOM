@@ -24,8 +24,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 gem 'devise'
+gem 'devise-french'
+gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'faker'
 # Use ActiveStorage variant
