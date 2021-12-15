@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
   def index
+
+    @cart_gif= current_user.cart.last.items
     
         if current_user.cart.first == nil
          c=Cart.create(user: current_user, category: "chat")
@@ -19,6 +21,7 @@ class CartsController < ApplicationController
     # current_user.cart.(category: params[:category]).save
         # Item.new(category: "snake").save
           c =  current_user.cart.last
+
       c.category=params[:category]
        c.save
 
@@ -33,7 +36,11 @@ class CartsController < ApplicationController
     puts params[:gif_url]
     puts "333333333333333333333333333333"
 
-   Item.create(url: params[:gif_url]).save
+   i = Item.create(url: params[:gif_url])
+    current_user.cart.last.items.first.delete
+   i.save
+   JoinTableCartItem.create(cart_id: current_user.cart.last.id, item_id: i.id)
+   
         
 
 

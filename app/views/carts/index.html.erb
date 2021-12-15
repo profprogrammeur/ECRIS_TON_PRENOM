@@ -22,6 +22,20 @@
     </div>
   </div>
 
+
+     <div class="d-flex justify-content-around  ">             
+               <% @cart_gif.each do |gif|  %>
+                <div class=" card">
+                <%= image_tag gif.url, :alt => "image",class:"m-1 text-center",id:"",style: "height:100px;" %>
+                 <h5 class="niveau">Niveau </h5>
+                  <%# <img class="card-img-top" src="<%= gif.url %>
+               
+                </div>
+              <%end%>    
+            </div>
+
+
+
     <div class="d-flex justify-content-center">
 
 
@@ -82,20 +96,22 @@
       <%# <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1",id:"_chicken",style: "height:100px;" %> 
       <%# </a> %>
     </div>
+    
+             <%# <div  class="card-columns" > %>
+         
 
 
         
 
 
-          <div  class="card-columns 
-          " >
-            <% @gif['data'].each.with_index do |gif,index|  %>
-              <div class=" card">
-              <%= link_to cart_path(index, :gif_url => gif['images']['fixed_width']['url']), class: "", remote: true, method: "PUT" do %>
-                <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
-                <% end %>
-              </div>
-            <%end%>    
+            <div  class="card-columns" >
+              <% @gif['data'].each.with_index do |gif,index|  %>
+                <div class=" card">
+                <%= link_to cart_path(index, :gif_url => gif['images']['fixed_width']['url']), class: "", remote: true, method: "PUT" do %>
+                  <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
+                  <% end %>
+                </div>
+              <%end%>    
             </div>
           </div>
         </div>
