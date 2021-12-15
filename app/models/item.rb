@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
-  has_many :carts 
-  validates :category, presence: true
+  has_many :joinTableCartItem
+  has_many :carts, through: :joinTableCartItem
 
-  def index
-    @item = Item.all
-  end
+
+  
+
 
   
   
