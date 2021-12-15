@@ -21,15 +21,14 @@ if (document.getElementById("score").textContent<3) {
   } else {
  
     setTimeout(function(){
-    
+    document.getElementById("score").textContent = ""
     document.getElementById("sub-container").innerHTML="";
-    document.getElementById("sub-container").insertAdjacentHTML("beforeend", '<%= image_tag("cat#{@score}.gif", {:style => "width:300px", class:"text-center"}) 
+    document.getElementById("sub-sub-container0").insertAdjacentHTML("beforeend", '<%= image_tag("cat#{@score}.gif", {:style => "width:400px", class:"text-center rounded"}) 
          %>')
                                                                                                               <%# games_path(:score => @score) %>
-      document.getElementById("score").textContent = ""
+      
   
-      document.getElementById("sub-sub-container").insertAdjacentHTML("beforeend", '<%= link_to "CONTINUER", games_path(:score => @score+1), class: "btn btn-success mt-5 zoom-in-zoom-out"  %>')
+      document.getElementById("sub-sub-container").insertAdjacentHTML("beforeend", '<%= link_to "CONTINUER", games_path(:score => @score+1), class: "text-center btn btn-success mt-5 zoom-in-zoom-out"  %>')
    }, 1500);
 }
-
 
