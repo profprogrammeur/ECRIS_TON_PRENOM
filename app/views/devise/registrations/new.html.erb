@@ -30,7 +30,7 @@
   <div class="field">
     <div class="wrap-input100 validate-input" data-validate = "Password is required">
       <span class="focus-input100"></span>
-    <%= f.label :password %>
+    <label for="user_password">Mot de passe</label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> Caractères minimum)</em>
     <% end %><br />
@@ -41,7 +41,7 @@
   <div class="field">
    <div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
      <span class="focus-input100"></span>					
-     <%= f.label :password_confirmation %><br />
+     <label for="user_password_confirmation">Confirmer le mot de passe</label><br />
      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
   </div>
