@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'faker'
+gem 'stripe'
+gem 'sinatra'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
