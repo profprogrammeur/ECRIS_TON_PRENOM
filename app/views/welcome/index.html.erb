@@ -7,7 +7,16 @@
             <span class="text-cursive h5 text-red">Bienvenue sur notre site</span>
             <h1 class="mb-3 font-weight-bold text-teal">J'écris mon prénom</h1>
             <span  class="text-cursive text-white ">Apprendre en s'amusant</span>
-            <p class="mt-5"><a href="<%= new_user_registration_path %>" class="btn  py-4 btn-custom-1 btn-signup">S'inscrire</a></p>
+
+            <% if user_signed_in? %>
+                <p class="mt-5"><a href="<%= games_path %>" class="btn  py-4 btn-custom-1 btn-warning">JOUER</a></p>
+            <% else %>
+              <p class="mt-5"><a href="<%= new_user_registration_path %>" class="btn  py-4 btn-custom-1 btn-signup">S'inscrire</a></p>
+            <% end %>
+
+
+
+
           </div>
           <div class="col-md-6 ml-auto align-self-end">
             <%= image_tag "kid_transparent.png", :alt => "kid image",style: "",class: "img-fluid " %>

@@ -5,12 +5,17 @@ class GamesController < ApplicationController
     # @score = params[:score]
     # @score = session[:score]
     @user = current_user
-    g = Game.last
+    g = @user.games.last
+# case : game loop : if score in parmas get it
     if  params[:score]
       g.score = params[:score]
-    else 
+# case : first game
+    elsif @user.games.last == nil         
+      g = Game.new
+      g.user= @user
       g.score = 1
     end
+# case : reconnect
     @score = g.score 
     puts "#######################"
     puts "score = #{g.score}"
@@ -21,8 +26,6 @@ class GamesController < ApplicationController
 
     @Words=[]
     name = @user.child_name.upcase
-    
-    
     @Words.push(name)
     loop do 
       word =  name.chars.shuffle.join
@@ -43,5 +46,8 @@ class GamesController < ApplicationController
  def game1
      @user=current_user
   end
+
+  
+  
 
 end

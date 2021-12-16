@@ -1,3 +1,160 @@
-<h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
-<h1>VOICI LES CART</h1>
+
+
+
+<div class=" d-flex justify-content-around">
+    <div class="">
+      <div class="container " id="gifDisplay">
+        <div class="row ml-3 justify-content-center">
+        <div class="col-lg-10 offset-lg-1">  
+
+
+
+
+  <div class="">
+
+
+  <div>
+    <div id="gifSet"  class=" bg-teal d-flex justify-content-center" > 
+      <%= image_tag("cat1.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+      <%= image_tag("cat2.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+      <%= image_tag("cat3.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+      <%= image_tag("cat4.gif", {:style => "width:150px", class:"text-center m-2"}) %>
+    </div>
+  </div>
+
+    <div class="d-flex justify-content-center">
+
+
+
+
+
+
+      <%# <%= link_to  'CHIEN', carts_path("chien"), class: "btn btn-secondary m-1 ",id: "_cat", remote: true  %> 
+          <div class="d-flex flex-column">
+           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
+                <%= text_field_tag :category, nil, class: "form-control", value: "cat",style:"visibility: hidden"%>
+                <div class="">
+                <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %>
+                </div>
+                <div class="">
+                        <%= submit_tag("CHAT", class: "btn btn-start-order btn-secondary mb-4") %>     
+                </div>
+            <%end%>
+          </div>
+                  <div class="d-flex flex-column">
+           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
+                <%= text_field_tag :category, nil, class: "form-control", value: "dog",style:"visibility: hidden"%>
+                <div class="">
+                <%= image_tag '_dog.png', :alt => "dog image",class:"m-1",id:"_dog",style: "height:100px;" %>
+                </div>
+                <div class="">
+                        <%= submit_tag("CHIEN", class: "btn btn-start-order btn-danger mb-4") %>     
+                </div>
+            <%end%>
+          </div>
+                  <div class="d-flex flex-column">
+           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
+                <%= text_field_tag :category, nil, class: "form-control", value: "rabbit",style:"visibility: hidden"%>
+                <div class="">
+                <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1",id:"_rabbit",style: "height:100px;" %>
+                </div>
+                <div class="">
+                        <%= submit_tag("LAPIN", class: "btn btn-start-order btn-primary mb-4") %>     
+                </div>
+            <%end%>
+          </div>
+                  <div class="d-flex flex-column">
+           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
+                <%= text_field_tag :category, nil, class: "form-control", value: "chicken",style:"visibility: hidden"%>
+                <div class="">
+                <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1",id:"_chicken",style: "height:100px;" %>
+                </div>
+                <div class="">
+                        <%= submit_tag("POULE", class: "btn btn-start-order btn-warning mb-4") %>     
+                </div>
+            <%end%>
+          </div>
+        <%# <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %> 
+      <%# <a href="<%= item_path(item.id) %>
+      <%# <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %> 
+      <%# <%= image_tag '_dog.png', :alt => "dog image",class:"m-1",id:"_dog",style: "height:100px;" %> 
+      <%# <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1",id:"_rabbit",style: "height:100px;" %> 
+      <%# <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1",id:"_chicken",style: "height:100px;" %> 
+      <%# </a> %>
+    </div>
+
+
+        
+
+
+          <div  class="card-columns 
+          " >
+            <% @gif['data'].each do |gif|  %>
+              <div class=" card">
+                <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
+              </div>
+            <%end%>    
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+
+  function refreshSet (m) {
+    console.log(m)
+    let gifSet = document.getElementById("gifSet")
+    gifSet.innerHTML="";
+    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')                                                                 
+    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')                                                                 
+    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')                                                                                                                             
+                                                                      // image_tag("cat#{@score}.gif"
+  }
+
+    document.getElementById("_cat").addEventListener("click", () => {
+    refreshSet("cat");})
+
+    document.getElementById("_dog").addEventListener("click", () => {
+    document.getElementById("gifSet").innerHTML=""
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+   })
+
+       document.getElementById("_rabbit").addEventListener("click", () => {
+    document.getElementById("gifSet").innerHTML=""
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+   })
+
+       document.getElementById("_chicken").addEventListener("click", () => {
+    document.getElementById("gifSet").innerHTML=""
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
+   })
+
+
+
+
+
+</script>
+

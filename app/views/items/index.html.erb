@@ -1,49 +1,28 @@
 
-
 <%# @gif['data'].first['images']['downsized']['url'] %>
 
 <div class="container " id="gifDisplay">
-
-
   <div class="row ml-3 justify-content-center">
     <div class="offset-md-3 col-md-6 offset-md-3">
       <%= form_tag(items_path, method: "post", class: "form", id: "gif-form")  do %>
-      <div class="form-group">
+        <div class="form-group">
           <%= label_tag "Recherche", nil, class: "form-label" %>
           <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %>
-      </div>
-      <div class="text-center">
-        <%= submit_tag("RECHERCHER", class: "btn btn-start-order ") %>
-      </div>
+        </div>
+        <div class="text-center">
+          <%= submit_tag("RECHERCHER", class: "btn btn-start-order btn-danger mb-4") %>
+        </div>
       <%end%>
   </div>
-   
- <% @gif['data'].each do |gif|  %>
- <div  class="row mb-5 justify-content-center" >
-  <div class=" card-deck mr-5">
-    <div class="card bg-secondary">
-      <img class="card-img-top" src="<%= gif['images']['fixed_width_still']['url'] %>" alt="Card image cap">
-      <div class="card-body">
-      <p class="card-text text-center">image fixe</p>
-      </div>
-      <div class="card-footer ">
-        <h6 class="text-center "> <%=@category%></h6>
-      </div>
-    </div> 
-    <div class="card bg-warning">
-      <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
-      <div class="card-body">
-      <p class="card-text text-center">gif animé</p>
-      </div>
-      <div class="card-footer">
-        <h6 class="text-center"><%=@category %></h6>
+  <div class="col-lg-10 offset-lg-1">  
+    <div  class="card-columns  " >
+      <% @gif['data'].each do |gif|  %>
+        <div class=" card">
+          <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
+        </div>
+      <%end%>    
       </div>
     </div>
   </div>
 </div>
-<%end%>   
 
-
-
-
-</div>
