@@ -1,17 +1,24 @@
 class CartsController < ApplicationController
   def index
 
-    @cart_gif= current_user.cart.last.items
-    
-        if current_user.cart.first == nil
-         c=Cart.create(user: current_user, category: "chat")
-         @category=c.category
+   
+
+      if current_user.cart == nil
+        c = Cart.first.dup
+        c.user_id = current_user.id
+        c.save
+        Cart.first.items.each do |i| 
+          JoinTableCartItem.create(item_id: i.id, cart_id: c.id)
+        end
+
+        @category = c.category
       else 
-        @category=current_user.cart.last.category
+        @category = current_user.cart.category
       end
       @gif=GetGif.new.perform(@category)
-  end
-  
+      @cart_gif = current_user.cart.items 
+      end
+
   def show
     
   end
@@ -20,10 +27,9 @@ class CartsController < ApplicationController
   def create
     # current_user.cart.(category: params[:category]).save
         # Item.new(category: "snake").save
-          c =  current_user.cart.last
-
-      c.category=params[:category]
-       c.save
+      c =  current_user.cart
+      c.category = params[:category]
+      c.save
 
     redirect_to carts_path 
   end
@@ -34,12 +40,26 @@ class CartsController < ApplicationController
     puts "3333333333333333333333333333"
     puts params[:id]
     puts params[:gif_url]
+    puts session[:i]
+    puts "RRRRRRRRRRRRRRRRRRR"
     puts "333333333333333333333333333333"
 
-   i = Item.create(url: params[:gif_url])
-    current_user.cart.last.items.first.delete
-   i.save
-   JoinTableCartItem.create(cart_id: current_user.cart.last.id, item_id: i.id)
+  #  i = Item.create(url: params[:gif_url])
+    if defined?(session[:i]) == nil || session[:i] > 2
+      session[:i]=0
+    else session[:i]+=1
+    end
+    #     puts @i
+    # puts "77777777777777777777777"
+    # if @item > 3
+    #   @item = 0
+    # else 
+    current_user.cart.items.all[session[:i]].update(url: params[:gif_url])
+    # @item += 1
+    # end
+  #  JoinTableCartItem.create(cart_id: current_user.cart.id, item_id: i.id)
+    #  JoinTableCartItem.update(current_user.cart.items.first.id, cart_id: current_user.cart.id, item_id: i.id)
+
    
         
 

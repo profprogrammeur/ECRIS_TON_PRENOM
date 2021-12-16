@@ -4,9 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
- has_many :cart 
+  has_one :cart 
+  # has_many :carts 
+
   has_many :games
-  
+  has_many :items, through: :cart
+
   # after_create :welcome_send
 
     def welcome_send
