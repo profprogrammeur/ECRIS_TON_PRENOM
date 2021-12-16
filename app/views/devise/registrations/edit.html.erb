@@ -57,14 +57,18 @@
   </div>
   </div>
   </div>
+
    <div class="img-kid col-md-6 ml-auto ">
             <%= image_tag "kid_transparent.png", :alt => "kid image",style: "height: 800px",class: " " %>
             </div>
             </div>
 <% end %>
 
-<h3>Supprimer mon compte</h3>
 
-<p>Pas content? <%= button_to "Supprimer le compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr??" }, method: :delete %></p>
-
+ <div class="container-btn btn btn-danger mt-3 ml-3 mb-3 mr-3">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+ <%= button_to "Supprimer le compte", registration_path(resource_name), class: 'remove-submit-btn-style', data: { confirm: "Vous êtes sûr??" }, method: :delete %>
+</div>
 <%= link_to "Retour en arrière", :back %>
+
