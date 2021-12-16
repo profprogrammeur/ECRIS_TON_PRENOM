@@ -1,23 +1,25 @@
 class CartsController < ApplicationController
-  def index
 
-   
-
-      if current_user.cart == nil
-        c = Cart.first.dup
-        c.user_id = current_user.id
-        c.save
-        Cart.first.items.each do |i| 
-          JoinTableCartItem.create(item_id: i.id, cart_id: c.id)
-        end
-
-        @category = c.category
-      else 
-        @category = current_user.cart.category
+  def index 
+    if current_user.cart == nil
+      c = Cart.first.dup
+      c.user_id = current_user.id
+      @category = c.category
+      c.save
+      Cart.first.items.each do |i| 
+        JoinTableCartItem.create(item_id: i.id, cart_id: c.id)
       end
-      @gif=GetGif.new.perform(@category)
-      @cart_gif = current_user.cart.items 
-      end
+    else 
+      @category = current_user.cart.category
+    end
+    @gif=GetGif.new.perform(@category)
+    @cart_gif = current_user.cart.items 
+    puts "################################################"
+    puts "current_user.cart.items :"
+       puts current_user.cart.items
+    puts "################################################"
+
+  end
 
   def show
     
@@ -45,7 +47,8 @@ class CartsController < ApplicationController
     puts "333333333333333333333333333333"
 
   #  i = Item.create(url: params[:gif_url])
-    if defined?(session[:i]) == nil || session[:i] > 2
+    # if defined?(session[:i]) == nil || session[:i] > 2
+  if session[:i] == nil || session[:i] > 2
       session[:i]=0
     else session[:i]+=1
     end
