@@ -12,7 +12,7 @@
   player.save 
   puts "One player"
 
-  cart1 = Cart.new(category: "chat", user_id: 1, item_id: 1)
+  cart1 = Cart.new(category: "chat", user_id: 1)
   cart1.save
   puts "Create cart1"
 
