@@ -32,11 +32,11 @@
             <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto  ">
 
+                <li><a href="<%= root_path %>" class="nav-link ">Acceuil</a></li>
                 <li><a href="<%= games_path%>" class="nav-link ">Jeux</a></li>
-                <li><a href="<%=%> " class="nav-link">Gallerie</a></li>
-                <li><a href="<%= avatars_path%>" class="nav-link">Avatar</a></li>
-                <li><a href="<%= carts_path%>" class="nav-link">Cart</a></li>               
-                <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="" class="nav-link">Premium</a></li>
+                <li><a href="<%= edit_user_registration_path%>" class="nav-link">Profile</a></li>
+                <li><a href="<%= carts_path%>" class="nav-link">Gifs</a></li>               
+                <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
                 
                 <% if user_signed_in? %>
                   <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal py-1 px-2 " do %>
@@ -45,6 +45,8 @@
                 <% else %>
                 <li class="nav-item"><a class="btn btn-primary py-1 px-2" href="<%= new_user_session_path %>">Se connecter</a></li>
                 <% end %>
+
+                
 
 
               </ul>
