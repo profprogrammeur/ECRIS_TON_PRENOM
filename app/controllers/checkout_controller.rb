@@ -5,7 +5,7 @@ class CheckoutController < ApplicationController
       payment_method_types: ['card'],
       line_items: [
         {
-          name: 'Rails Stripe Checkout',
+          name: 'Ecris ton prenom premium',
           amount: (@total*100).to_i,
           currency: 'eur',
           quantity: 1
