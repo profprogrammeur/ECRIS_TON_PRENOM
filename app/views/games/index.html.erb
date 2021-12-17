@@ -6,8 +6,8 @@
     <%= image_tag("emoji-smile-fill.svg", {:style => "width:50px;", class: "unactivated smile"}) %>
     <%= image_tag("emoji-smile-fill.svg", {:style => "width:50px;", class: "unactivated smile"}) %>
   
-    <h1>NIVEAU : <span id="level"><%= @score%></span></h1>
-    <h1 id="message">où est écrit : <%=@user.child_name.upcase%> ?</h1>
+    <h2>NIVEAU <span id="level"><%= @score%></span></h2>
+    <h1 id="message">où est écrit : <b><%=@user.child_name.upcase%></b> ?</h1>
 
     <div class="package  bg-white mt-5">
           
@@ -15,9 +15,9 @@
 
         <% @Words.each do |word|  %>
           <% if word==@user.child_name.upcase %>
-            <%= link_to  word, "", class: "btn btn-secondary m-1 ",id: "child_name", remote: true  %>
+            <%= link_to  word, "", class: "btn btn-custom-1 m-1 #{@color.sample}",id: "child_name", remote: true  %>
           <%else%> 
-            <%= link_to  word, "", class: "btn btn-secondary word m-1", remote: true  %>
+            <%= link_to  word, "", class: "btn btn-custom-1 word m-1 #{@color.sample}", remote: true  %>
           <%end%>
         <% end %>
       </div>

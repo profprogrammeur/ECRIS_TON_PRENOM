@@ -49,9 +49,9 @@ class CartsController < ApplicationController
     puts "333333333333333333333333333333"
     @gif=GetGif.new.perform(params[:category])
 
-
+      rand_numb=[*1..50].sample(4)
        4.times do |i|
-     current_user.cart.items.all[i].update(url: @gif["data"][rand(1..50)]['images']['fixed_width']['url'])
+     current_user.cart.items.all[i].update(url: @gif["data"][rand_numb[i]]['images']['fixed_width']['url'])
      puts current_user.cart.items.all[i].id
        end
 
