@@ -15,13 +15,51 @@ padding:0px;
   color: white !important;
 }
 
+
+
+.color-b1 {
+  background-color: #F6F5F5 !important;
+}
+
 .color-b2 {
-  background-color: #b2b2b2;
+  background-color: #b2b2b2 !important;
+}
+
+.color-b3 {
+  background-color: #fd4d40 !important;
+}
+
+.color-b4 {
+  background-color: #16c3b0 !important;
+}
+
+.color-b5 {
+  background-color: #71bc42 !important;
+}
+
+.color-b6 {
+  background-color: #46d7fc !important;
+}
+
+.color-b7 {
+  background-color: #fdb62f !important;
+}
+
+.color-b8 {
+  background-color: #fd84f7 !important;
+}
+
+.color-b9 {
+  background-color: #ffee07 !important;
 }
 
 .mp-0 {
   margin : 0 !important;
   padding: 0 !important;
+}
+.icone {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .container-game {
@@ -45,3 +83,22 @@ padding:0px;
 }
 
 
+@media (max-width:1000px) {
+
+.menu-wrap > btn {
+ font-size: small !important;
+}
+.menu-wrap .btn {
+padding-bottom: 0 !important;
+padding-top: 0 !important;
+font-size: smaller !important;
+}
+
+.site-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center;
+}
+
+
+}

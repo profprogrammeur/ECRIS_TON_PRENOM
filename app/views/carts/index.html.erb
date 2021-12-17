@@ -1,79 +1,61 @@
 
 
 
-<div class=" d-flex justify-content-around">
+<div class=" d-flex justify-content-around color-b6">
     <div class="">
       <div class="container " id="gifDisplay">
         <div class="row ml-3 justify-content-center">
-        <div class="col-lg-10 offset-lg-1">  
-
-
-
-
+        <div class="col-lg-12 offset-lg-1">  
   <div class="">
 
 
-  <div>
-    <div id="gifSet"  class=" bg-teal d-flex justify-content-center" > 
-      <%= image_tag("cat1.gif", {:style => "width:150px", class:"text-center m-2"}) %>
-      <%= image_tag("cat2.gif", {:style => "width:150px", class:"text-center m-2"}) %>
-      <%= image_tag("cat3.gif", {:style => "width:150px", class:"text-center m-2"}) %>
-      <%= image_tag("cat4.gif", {:style => "width:150px", class:"text-center m-2"}) %>
-    </div>
-  </div>
+
+     <div class="d-flex justify-content-around  mt-5">             
+               <% @cart_gif.each_with_index do |gif,index|  %>
+                <div class=" card bg-teal">
+                <%= image_tag gif.url, :alt => "image",class:" text-center",id:" ",style: "height:200px;" %>
+               
+                 <h5 class="text-center font-weight-bold my-2 ">Niveau <%="#{index+1}"%> </h5>
+                  <%# <img class="card-img-top" src="<%= gif.url %>
+               
+                </div>
+              <%end%>    
+              
+            </div>
+<h2 class="mt-5 text-center">Cliquez sur les animaux pour changer les images :</h2>
+
 
     <div class="d-flex justify-content-center">
+     
+            <div class=" m-5 text-center ">
+              
+              <%= link_to  cart_path(current_user.cart.id, :category => "cat"), class: "btn btn-secondary m-1  ",id: "btn-cat", remote: true, method: "PUT"  do %>
+              <%= image_tag '_cat.png', :alt => "cat image",class:" card-img ",id:"_cat",style: "height:100px; width:100px" %> 
+              CHAT
+              <%end%>
+            </div>
 
+            <div class="  m-5 text-center ">
+              
+              <%= link_to  cart_path(current_user.cart.id, :category => "dog"), class: "btn btn-danger m-1 btn-lg",id: "btn-dog", remote: true, method: "PUT"  do %>
+               <%= image_tag '_dog.png', :alt => "dog image",class:"m-1 card-img",id:"_dog",style: "height:100px; width:100px" %> 
+                CHIEN
+               <%end%>
+            </div>
 
-
-
-
-
-      <%# <%= link_to  'CHIEN', carts_path("chien"), class: "btn btn-secondary m-1 ",id: "_cat", remote: true  %> 
-          <div class="d-flex flex-column">
-           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
-                <%= text_field_tag :category, nil, class: "form-control", value: "cat",style:"visibility: hidden"%>
-                <div class="">
-                <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %>
-                </div>
-                <div class="">
-                        <%= submit_tag("CHAT", class: "btn btn-start-order btn-secondary mb-4") %>     
-                </div>
-            <%end%>
-          </div>
-                  <div class="d-flex flex-column">
-           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
-                <%= text_field_tag :category, nil, class: "form-control", value: "dog",style:"visibility: hidden"%>
-                <div class="">
-                <%= image_tag '_dog.png', :alt => "dog image",class:"m-1",id:"_dog",style: "height:100px;" %>
-                </div>
-                <div class="">
-                        <%= submit_tag("CHIEN", class: "btn btn-start-order btn-danger mb-4") %>     
-                </div>
-            <%end%>
-          </div>
-                  <div class="d-flex flex-column">
-           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
-                <%= text_field_tag :category, nil, class: "form-control", value: "rabbit",style:"visibility: hidden"%>
-                <div class="">
-                <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1",id:"_rabbit",style: "height:100px;" %>
-                </div>
-                <div class="">
-                        <%= submit_tag("LAPIN", class: "btn btn-start-order btn-primary mb-4") %>     
-                </div>
-            <%end%>
-          </div>
-                  <div class="d-flex flex-column">
-           <%= form_tag(carts_path, method: "post", class: "form", id: "gif-form")  do %>
-                <%= text_field_tag :category, nil, class: "form-control", value: "chicken",style:"visibility: hidden"%>
-                <div class="">
-                <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1",id:"_chicken",style: "height:100px;" %>
-                </div>
-                <div class="">
-                        <%= submit_tag("POULE", class: "btn btn-start-order btn-warning mb-4") %>     
-                </div>
-            <%end%>
-          </div>
+            <div class="  m-5 text-center ">
+              <%= link_to cart_path(current_user.cart.id, :category => "rabbit"), class: "btn btn-primary m-1 ",id: "btn-rabbit", remote: true, method: "PUT" do %>
+              <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1 card-img",id:"_rabbit",style: "height:100px; width:100px" %> 
+              LAPIN
+              <%end%>
+            </div>
+         
+            <div class="  m-5 text-center ">
+              <%= link_to cart_path(current_user.cart.id, :category => "chicken"), class: "btn btn-warning m-1 ",id: "btn-chicken", remote: true, method: "PUT" do %>
+              <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1 card-img",id:"_chicken",style: "height:100px; width:100px" %>
+              POULE
+              <%end%>
+           </div>
         <%# <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %> 
       <%# <a href="<%= item_path(item.id) %>
       <%# <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %> 
@@ -82,19 +64,10 @@
       <%# <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1",id:"_chicken",style: "height:100px;" %> 
       <%# </a> %>
     </div>
-
-
-        
-
-
-          <div  class="card-columns 
-          " >
-            <% @gif['data'].each do |gif|  %>
-              <div class=" card">
-                <img class="card-img-top" src="<%= gif['images']['fixed_width']['url']%>" alt="Card image cap"> 
-              </div>
-            <%end%>    
-            </div>
+    
+             <%# <div  class="card-columns" > %>
+         
+           
           </div>
         </div>
       </div>

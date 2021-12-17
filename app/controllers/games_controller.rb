@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   def index
     # @score = params[:score]
     # @score = session[:score]
+    @color = ["color-b2","color-b3","color-b4","color-b5","color-b6","color-b7","color-b8","color-b9"]
     @user = current_user
     g = @user.games.last
 # case : game loop : if score in parmas get it
@@ -21,7 +22,9 @@ class GamesController < ApplicationController
     puts "score = #{g.score}"
     g.save
     if @score > 4
-      redirect_to(root_path)
+      @score = 1
+      # redirect_to(root_path)
+      
     end
 
     @Words=[]

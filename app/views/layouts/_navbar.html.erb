@@ -1,58 +1,41 @@
 
 
-   <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"><ul class="site-nav-wrap">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="about.html" class="nav-link">About</a></li>
-                  <li><a href="packages.html" class="nav-link">Packages</a></li>
-                  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                  <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul></div>
-    </div>
 
 
-<header class="site-navbar site-navbar-target color-b2 py-1 " role="banner">
-
+<header class="site-navbar site-navbar-target color-b2 py-1  " role="banner">
 
     <div class="container d-flex justify-content-around ">
-        <div class="site-logo mr-auto ">
-          <a href=<%= root_path %>>ETP<span class="text-danger">.</span></a>
+        <div class="site-logo  mt-2">
+          <a href=<%= root_path %>><%= image_tag "logo.png", :alt => "logo",style: "",class: " " %><span class="text-danger">.</span></a>
         </div>           
      
 
-        <div class="menu-wrap d-flex align-items-center my-1 py-1">
-          <span class="d-inline-block d-lg-none"><a href="#" class="text-black site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-black">AAA</span></a></span>
-            <a href="#" class="text-black site-menu-toggle js-menu-toggle py-5 active"><span class="icon-menu h3 text-black"></span></a>
-            <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
+          <div class=" d-flex align-items-center my-1 py-1 menu-wrap" >
+            <nav class="site-navigation text-left mr-auto  d-lg-block " role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto  ">
 
                 <li><a href="<%= root_path %>" class="nav-link ">Acceuil</a></li>
                 <li><a href="<%= games_path%>" class="nav-link ">Jeux</a></li>
                 <li><a href="<%= edit_user_registration_path%>" class="nav-link">Profile</a></li>
                 <li><a href="<%= carts_path%>" class="nav-link">Gifs</a></li>               
-                <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
                 
                 <% if user_signed_in? %>
                   <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal py-1 px-2 " do %>
                   <div>Se déconnecter</div>
+               
                   <% end %>
                 <% else %>
-                <li class="nav-item"><a class="btn btn-primary py-1 px-2" href="<%= new_user_session_path %>">Se connecter</a></li>
+                <li class="nav-item"><a class="btn-primary py-1 px-2 btn "  href="<%= new_user_session_path %>">Se connecter</a></li>
                 <% end %>
-
-                
-
+                <li class="nav-item"><a class=" btn-warning  py-1 px-2 btn" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
 
               </ul>
             </nav>
         </div>
       </div>
+
+
+
 
      
 
