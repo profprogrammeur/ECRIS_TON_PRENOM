@@ -20,32 +20,42 @@
                
                 </div>
               <%end%>    
+              
             </div>
-
+<h2 class="mt-5 text-center">Cliquez sur les animaux pour changer les images :</h2>
 
 
     <div class="d-flex justify-content-center">
      
             <div class=" m-5 text-center ">
-              <%= image_tag '_cat.png', :alt => "cat image",class:"m-1 card-img",id:"_cat",style: "" %> 
-              <%= link_to  "CHAT", cart_path(current_user.cart.id, :category => "cat"), class: "btn btn-secondary m-1  ",id: "btn-cat", remote: true, method: "PUT"  %>
               
+              <%= link_to  cart_path(current_user.cart.id, :category => "cat"), class: "btn btn-secondary m-1  ",id: "btn-cat", remote: true, method: "PUT"  do %>
+              <%= image_tag '_cat.png', :alt => "cat image",class:" card-img ",id:"_cat",style: "height:100px; width:100px" %> 
+              CHAT
+              <%end%>
             </div>
 
             <div class="  m-5 text-center ">
-              <%= image_tag '_dog.png', :alt => "dog image",class:"m-1 card-img",id:"_dog",style: "" %> 
-              <%= link_to  "CHIEN", cart_path(current_user.cart.id, :category => "dog"), class: "btn btn-danger m-1 btn-lg",id: "btn-dog", remote: true, method: "PUT"  %>
+              
+              <%= link_to  cart_path(current_user.cart.id, :category => "dog"), class: "btn btn-danger m-1 btn-lg",id: "btn-dog", remote: true, method: "PUT"  do %>
+               <%= image_tag '_dog.png', :alt => "dog image",class:"m-1 card-img",id:"_dog",style: "height:100px; width:100px" %> 
+                CHIEN
+               <%end%>
             </div>
 
             <div class="  m-5 text-center ">
-              <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1 card-img",id:"_rabbit",style: "" %> 
-              <%= link_to "LAPIN", cart_path(current_user.cart.id, :category => "rabbit"), class: "btn btn-primary m-1 ",id: "btn-rabbit", remote: true, method: "PUT"  %>
+              <%= link_to cart_path(current_user.cart.id, :category => "rabbit"), class: "btn btn-primary m-1 ",id: "btn-rabbit", remote: true, method: "PUT" do %>
+              <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1 card-img",id:"_rabbit",style: "height:100px; width:100px" %> 
+              LAPIN
+              <%end%>
             </div>
          
             <div class="  m-5 text-center ">
-              <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1 card-img",id:"_chicken",style: "" %>
-              <%= link_to  "POULE", cart_path(current_user.cart.id, :category => "chicken"), class: "btn btn-warning m-1 ",id: "btn-chicken", remote: true, method: "PUT"  %>
-            </div>
+              <%= link_to cart_path(current_user.cart.id, :category => "chicken"), class: "btn btn-warning m-1 ",id: "btn-chicken", remote: true, method: "PUT" do %>
+              <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1 card-img",id:"_chicken",style: "height:100px; width:100px" %>
+              POULE
+              <%end%>
+           </div>
         <%# <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %> 
       <%# <a href="<%= item_path(item.id) %>
       <%# <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %> 
