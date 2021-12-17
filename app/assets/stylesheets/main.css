@@ -82,7 +82,6 @@ padding:0px;
 @media (max-width:1000px) {
 
 .menu-wrap > btn {
- /* background-color: aqua !important; */
  font-size: small !important;
 }
 .menu-wrap .btn {
