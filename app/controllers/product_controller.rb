@@ -3,5 +3,6 @@ class ProductController < ApplicationController
   end
 
   def create
+    @product = Stripe::Product.retrieve('prod_KnEXdFjqBgA6Hd')
   end
 end

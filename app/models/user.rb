@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          after_create :welcome_send
+  belongs_to :product, foreign_key: "product_id"
   has_many :cart 
   has_many :games
   
