@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         after_create :welcome_send
- has_many :cart 
+         #after_create :welcome_send
+  has_many :cart 
   has_many :games
   
   

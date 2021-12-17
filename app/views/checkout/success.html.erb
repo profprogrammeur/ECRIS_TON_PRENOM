@@ -3,6 +3,6 @@
   <p>Nous avons bien reçu votre paiement de <%= number_to_currency(@payment_intent.amount_received / 100.0, unit: "€", separator: ",", delimiter: "", format: "%n %u") %>.</p>
   <p>Le statut de votre paiement est : <%= @payment_intent.status %>.</p>
   <p>Bienvenue dans ETP premium</p>
-  <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
+  <li class="nav-item"><a class="btn btn-warning  py-1 px-2" href="<%= carts_path%>" class="nav-link">Premium</a></li>
   <p>Cliquer pour y acceder</p>
 </div>
