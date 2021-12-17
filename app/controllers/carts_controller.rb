@@ -1,26 +1,13 @@
 class CartsController < ApplicationController
 
   def index 
-    if current_user.cart == nil
-      c = Cart.first.dup
-      c.user_id = current_user.id
-      @category = c.category
-      c.save
-      Cart.first.items.each do |i| 
-        JoinTableCartItem.create(item_id: i.id, cart_id: c.id)
-
-         
-      end
-    else 
-      @category = current_user.cart.category
-    end
+    @category = current_user.cart.category
     @gif=GetGif.new.perform(@category)
     @cart_gif = current_user.cart.items 
     puts "################################################"
     puts "current_user.cart.items :"
        puts current_user.cart.items
     puts "################################################"
-
   end
 
   def show
