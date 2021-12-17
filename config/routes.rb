@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :carts 
   resources :items 
   resources :avatars 
+  resources :products only: [:new, :create]
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
