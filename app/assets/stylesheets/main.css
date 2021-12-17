@@ -57,6 +57,10 @@ padding:0px;
   margin : 0 !important;
   padding: 0 !important;
 }
+.icone {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .container-game {
   display: flex;

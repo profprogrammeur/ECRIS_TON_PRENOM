@@ -1,35 +1,25 @@
 
-<%# 
-   <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-    </div> %>
+
 
 
 <header class="site-navbar site-navbar-target color-b2 py-1  " role="banner">
 
-
-    <div class="container d-flex justify-content-around  ">
-        <div class="site-logo mr-auto ">
-          <a href=<%= root_path %>>ETP<span class="text-danger">.</span></a>
+    <div class="container d-flex justify-content-around ">
+        <div class="site-logo  mt-2">
+          <a href=<%= root_path %>><%= image_tag "logo.png", :alt => "logo",style: "",class: " " %><span class="text-danger">.</span></a>
         </div>           
      
 
-        <div class=" d-flex align-items-center my-1 py-1 menu-wrap" >
+          <div class=" d-flex align-items-center my-1 py-1 menu-wrap" >
             <nav class="site-navigation text-left mr-auto  d-lg-block " role="navigation">
-              <ul class="site-menu main-menu js-clone-nav mr-auto  " >
+              <ul class="site-menu main-menu js-clone-nav mr-auto  ">
 
-               <a href="<%= games_path%>" class="nav-link nav-links " >Jeux</a>
-               <a href="<%=%> " class="nav-link nav-links">Gallerie</a>
-               <a href="<%= avatars_path%>" class="nav-link nav-links">Avatar</a>
-                            
+                <li><a href="<%= root_path %>" class="nav-link ">Acceuil</a></li>
+                <li><a href="<%= games_path%>" class="nav-link ">Jeux</a></li>
+                <li><a href="<%= edit_user_registration_path%>" class="nav-link">Profile</a></li>
+                <li><a href="<%= carts_path%>" class="nav-link">Gifs</a></li>               
                 
                 <% if user_signed_in? %>
-                 <a href="<%= carts_path%>" class="nav-link nav-links">Cart</a> 
                   <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal py-1 px-2 " do %>
                   <div>Se déconnecter</div>
                
@@ -37,7 +27,7 @@
                 <% else %>
                 <li class="nav-item"><a class="btn-primary py-1 px-2 btn "  href="<%= new_user_session_path %>">Se connecter</a></li>
                 <% end %>
-                 <li class="nav-item"><a class="btn-warning  py-1 px-2 btn " href="" class="nav-link nav-links">Premium</a></li>
+                <li class="nav-item"><a class=" btn-warning  py-1 px-2 btn" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
 
               </ul>
             </nav>

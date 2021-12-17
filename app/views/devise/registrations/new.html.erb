@@ -41,7 +41,7 @@
   <div class="field">
    <div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
      <span class="focus-input100"></span>					
-     <%= f.label :password_confirmation %><br />
+     <label for="user_password_confirmation">Confirmer le mot de passe</label><br />
      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
   </div>
@@ -52,7 +52,7 @@
 							<button class="login100-form-btn">
     <%= f.submit "S'inscrire", class: 'remove-submit-btn-style' %>
    
-  </div>
+  </div></br>
    <%= render "devise/shared/links" %>
   </div>
   </div>

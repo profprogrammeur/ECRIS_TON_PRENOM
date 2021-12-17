@@ -26,5 +26,18 @@
   end
 
 
+  # cart1 = Cart.new(category: "chat", user_id: 1)
+  # cart1.save
+  # puts "Create cart1"
 
-  
+  # item1 = Item.new(url: "urlo")
+  # item1.save
+  # puts "Create item1"
+
+  # join1 = JoinTableCartItem.new(cart_id: 1, item_id: 1)
+  # join1.save
+  # puts "Create join1"
+
+  # avatar1 = Avatar.new(url: "img")
+  # avatar1.save
+  # puts "Create item1"
