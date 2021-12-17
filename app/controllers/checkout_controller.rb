@@ -8,7 +8,8 @@ class CheckoutController < ApplicationController
           name: 'Ecris ton prenom premium',
           amount: (@total*100).to_i,
           currency: 'eur',
-          quantity: 1
+          quantity: 1,
+          images: ["assets/logo.png"]
         },
       ],
       success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
