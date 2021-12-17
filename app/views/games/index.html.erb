@@ -1,6 +1,16 @@
-<div class="container-game " style="background-color:#17a2b8; height:100vh;">
+<div class="container-m" style="background-color:#17a2b8;" >
+<div class="row" >
+    <div class="icone col-sm  mt-5">
+<%= image_tag "_cat.png", :alt => "cat",style: "width: 50px; height: 50px",class: " " %>
+<%= image_tag "_chicken.png", :alt => "chicken",style: "width: 50px; height: 50px",class: " " %>
+</div>
+</div>
+
+<div class="container-game " style="background-color:#17a2b8; height:70vh;">
+
   
-  <div class="text-center mt-5" id="sub-container">
+  
+  <div class="text-center mt-5" style="width: 700px; " id="sub-container">
     <h5 id="score" class= "d-flex justify-content-center mt-0 mb-2" >0</h5>
     <%= image_tag("emoji-smile-fill.svg", {:style => "width:50px;", class: "unactivated smile"}) %>
     <%= image_tag("emoji-smile-fill.svg", {:style => "width:50px;", class: "unactivated smile"}) %>
@@ -9,7 +19,7 @@
     <h1>NIVEAU : <span id="level"><%= @score%></span></h1>
     <h1 id="message">où est écrit : <%=@user.child_name.upcase%> ?</h1>
 
-    <div class="package  bg-white mt-5">
+    <div class="package  bg-white mt-5 d-flex justify-content-center">
           
       <div class=" " id="words-div">
 
@@ -27,8 +37,24 @@
   <div class="align-self-center">
     <div class=" " id="sub-sub-container0"></div>
     <div class="text-center" id="sub-sub-container"></div>
+    
   </div>
+  
+
   </div>
+  
+  </div>
+  
 </div>
+<div class="container-m" style="background-color:#17a2b8;" >
+<div class="row"  >
+    <div class="icone col-sm ml-2 mb-5" style="width: 100px;">
+<%= image_tag "_dog.png", :alt => "dog",style: "width: 50px; height: 50px",class: " " %>
+<%= image_tag "_rabbit.png", :alt => "rabbit",style: "width: 50px; height: 50px",class: " " %>
+</div>
+</div>
+
+
+    
 
 <%= javascript_include_tag 'game1' %>
