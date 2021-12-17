@@ -79,3 +79,23 @@ padding:0px;
 }
 
 
+@media (max-width:1000px) {
+
+.menu-wrap > btn {
+ /* background-color: aqua !important; */
+ font-size: small !important;
+}
+.menu-wrap .btn {
+padding-bottom: 0 !important;
+padding-top: 0 !important;
+font-size: smaller !important;
+}
+
+.site-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center;
+}
+
+
+}
