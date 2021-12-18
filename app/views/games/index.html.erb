@@ -1,16 +1,22 @@
 
 
 
-<div class="container-game " style="background-color:#17a2b8; height:100vh;">
+<div class="container-game noselect" style="background-color:#17a2b8; height:100vh;" ondragstart="return false;" ondrop="return false";>
  <div class="text-center mt-5" id="sub-container">
  
   <div class="row" >
-    <div class="d-flex justify-content-between col-sm  mt-3">
+    <div class="d-flex justify-content-between col-sm  mt-3 align-items-center">
       <%= image_tag "_cat.png", :alt => "cat",style: "width: 100px; height: 100px",class: " " %>
+        <div id="toggle-div">
+        <button class="btn btn-warning " id="fullScreen">PLEIN <br> ECRAN</button>
+        <a href="<%= root_path %>" class="btn btn-danger ">RETOUR <br>  ACCUEIL</a>
+      </div>
       <%= image_tag "_chicken.png", :alt => "chicken",style: "width: 100px; height: 100px",class: "" %>
     </div>
   </div>
-  
+
+   
+
  
     <h5 id="score" class= "d-flex justify-content-center mt-0 mb-2" >0</h5>
     <%= image_tag("emoji-smile-fill.svg", {:style => "width:50px;", class: "unactivated smile"}) %>

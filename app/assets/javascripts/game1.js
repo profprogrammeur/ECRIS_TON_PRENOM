@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.word').forEach(el => el.classList.add("bg-danger"))
     document.getElementById("child_name").classList.add('bg-success')
   }
+
   document.getElementById("child_name").addEventListener("click", () => {
     message("GAGNÉ");
     let smiles = document.querySelectorAll(".unactivated");
@@ -21,4 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // document.getElementById("child_name").classList.add('bg-success')
   // document.getElementById("btn1").addEventListener("click", () => message("PERDU"))
   // document.getElementById("btn3").addEventListener("click", () => message("PERDU"))
+
+  document.onfullscreenchange =
+  function () {
+  if (document.fullscreenElement ==null) {
+    document.getElementById("toggle-div").classList.remove('invisible')
+  }}
+
+function fullScreen() {
+
+  document.documentElement.requestFullscreen();
+  document.getElementById("toggle-div").classList.add('invisible')
+}
+  document.getElementById("fullScreen").addEventListener("click", () => fullScreen())
+
 })
+console.log("RRRRRRRRREEEEEEELLLLLLLLLLOOOOOOOOOOOOOAAAAAAAAAAAAADDDDDDDDDD")
