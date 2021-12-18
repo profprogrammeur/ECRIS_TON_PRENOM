@@ -307,11 +307,11 @@ background: #fdb62f;
     padding: 4em 0; }
 
 .site-footer {
-  padding: 4em 0;
+  padding: 1em 0;
   background: #343a40; }
   @media (min-width: 768px) {
     .site-footer {
-      padding: 8em 0; } }
+      padding: 1em ; } }
   .site-footer .border-top {
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important; }
   .site-footer p {
