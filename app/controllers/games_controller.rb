@@ -2,6 +2,7 @@ class GamesController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @skip_navbar = true
     # @score = params[:score]
     # @score = session[:score]
     @color = ["color-b2","color-b3","color-b4","color-b5","color-b6","color-b7","color-b8","color-b9"]
