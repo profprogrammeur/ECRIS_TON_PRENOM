@@ -9,7 +9,8 @@ before_action :current_cart
 
   def current_cart
     puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-    puts current_user.present?
+    # puts current_user.present?
+    # puts @premium
      puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     if current_user.present?
       if current_user.cart == nil

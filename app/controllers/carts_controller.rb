@@ -5,8 +5,8 @@ class CartsController < ApplicationController
     @gif=GetGif.new.perform(@category)
     @cart_gif = current_user.cart.items 
     puts "################################################"
-    puts "current_user.cart.items :"
-       puts current_user.cart.items
+    puts "session[:premium] == succeeded?"
+       puts session[:premium]
     puts "################################################"
   end
 
