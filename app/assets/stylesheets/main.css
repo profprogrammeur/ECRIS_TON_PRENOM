@@ -13,6 +13,10 @@
   display: none !important;
 }
 
+.btn-stroke {
+ border: 3px solid black;
+}
+
 .btn-custom-11 {
 padding:0px;
 }

@@ -22,10 +22,11 @@
                   <%= link_to destroy_user_session_path, method: 'DELETE', class:" btn btn-teal py-1 px-2 " do %>
                     <div>Se déconnecter</div>
                   <% end %>
-                    <% if session[:premium] == "succeeded" %>
-                      <li class="nav-item"><a class=" btn-warning  py-1 px-2 btn" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
-                    <% else %>              
+                    <% #if session[:premium] == "succeeded" %>
+                     <% if current_user.is_premium == true %>     
                       <li class="nav-item"><a class=" btn-warning  py-1 px-2 btn" href="<%= carts_path%>" class="nav-link">GIFS</a></li>
+                    <% else %>   
+                      <li class="nav-item"><a class=" btn-warning  py-1 px-2 btn" href="<%= avatars_path%>" class="nav-link">Premium</a></li>
                     <% end %>
 
                  
