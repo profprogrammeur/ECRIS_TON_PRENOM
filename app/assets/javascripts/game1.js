@@ -27,14 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function () {
   if (document.fullscreenElement ==null) {
     document.getElementById("toggle-div").classList.remove('invisible')
+    console.log("screen CHANGED")
+    // localStorage.setItem("fullscreen", "false");
   }}
 
+  // if (document.fullscreenElement == null) {
+  //   localStorage.setItem("fullscreen", "false");
+  // }
+  // console.log("document.fullscreenElement : " + document.fullscreenElement )
+
+  
 function fullScreen() {
 
   document.documentElement.requestFullscreen();
   document.getElementById("toggle-div").classList.add('invisible')
+  // localStorage.setItem("fullscreen", "true");
 }
   document.getElementById("fullScreen").addEventListener("click", () => fullScreen())
 
+  if (localStorage.getItem("fullscreen") == "true") { fullScreen() }
+  // console.log("localStorage fullscreen : " + localStorage.getItem("fullscreen"))
 })
-console.log("RRRRRRRRREEEEEEELLLLLLLLLLOOOOOOOOOOOOOAAAAAAAAAAAAADDDDDDDDDD")
+console.log("reload!")
