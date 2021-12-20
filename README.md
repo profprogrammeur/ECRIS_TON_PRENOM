@@ -17,8 +17,6 @@ bundle install
 
 👤 **Antoine/Hugo/Paul**
 
-* Github: [@https:\/\/github.com\/profprogrammeur https:\/\/github.com\/HugClaisse https:\/\/github.com\/Naoxy](https://github.com/https:\/\/github.com\/profprogrammeur https:\/\/github.com\/HugClaisse https:\/\/github.com\/Naoxy)
-
 ## Show your support
 
 Give a ⭐️ if this project helped you!
