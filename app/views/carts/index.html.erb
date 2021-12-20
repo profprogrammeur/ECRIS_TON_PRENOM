@@ -1,6 +1,4 @@
 
-
-
 <div class=" d-flex justify-content-around color-b6">
     <div class="">
       <div class="container " id="gifDisplay">
@@ -16,7 +14,6 @@
                 <%= image_tag gif.url, :alt => "image",class:" text-center",id:" ",style: "height:200px;" %>
                
                  <h5 class="text-center font-weight-bold my-2 ">Niveau <%="#{index+1}"%> </h5>
-                  <%# <img class="card-img-top" src="<%= gif.url %>
                
                 </div>
               <%end%>    
@@ -56,18 +53,9 @@
               POULE
               <%end%>
            </div>
-        <%# <%= text_field_tag :category, nil, class: "form-control", placeholder: @category %> 
-      <%# <a href="<%= item_path(item.id) %>
-      <%# <%= image_tag '_cat.png', :alt => "cat image",class:"m-1",id:"_cat",style: "height:100px;" %> 
-      <%# <%= image_tag '_dog.png', :alt => "dog image",class:"m-1",id:"_dog",style: "height:100px;" %> 
-      <%# <%= image_tag '_rabbit.png', :alt => "rabbit image",class:"m-1",id:"_rabbit",style: "height:100px;" %> 
-      <%# <%= image_tag '_chicken.png', :alt => "chicken image",class:"m-1",id:"_chicken",style: "height:100px;" %> 
-      <%# </a> %>
+
     </div>
     
-             <%# <div  class="card-columns" > %>
-         
-           
           </div>
         </div>
       </div>
@@ -76,58 +64,9 @@
   </div>
   
 
-
-
 </div>
   <%= render 'layouts/footer'%>
 
 
 
-<script>
-
-
-
-  function refreshSet (m) {
-    console.log(m)
-    let gifSet = document.getElementById("gifSet")
-    gifSet.innerHTML="";
-    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')                                                                 
-    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')                                                                 
-    gifSet.insertAdjacentHTML("beforeend", '<%= image_tag("cat4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')                                                                                                                             
-                                                                      // image_tag("cat#{@score}.gif"
-  }
-
-    document.getElementById("_cat").addEventListener("click", () => {
-    refreshSet("cat");})
-
-    document.getElementById("_dog").addEventListener("click", () => {
-    document.getElementById("gifSet").innerHTML=""
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("dog4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-   })
-
-       document.getElementById("_rabbit").addEventListener("click", () => {
-    document.getElementById("gifSet").innerHTML=""
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("rabbit4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-   })
-
-       document.getElementById("_chicken").addEventListener("click", () => {
-    document.getElementById("gifSet").innerHTML=""
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken1.gif", {:style => "width:200px", class:"text-center m-2"}) %>')
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken2.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken3.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-    document.getElementById("gifSet").insertAdjacentHTML("beforeend", '<%= image_tag("chicken4.gif", {:style => "width:200px", class:"text-center m-2"}) %>')  
-   })
-
-
-
-
-
-</script>
 
