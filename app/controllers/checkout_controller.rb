@@ -23,6 +23,12 @@ class CheckoutController < ApplicationController
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+    intent = Stripe::PaymentIntent.create({
+      amount: 1099,
+      currency: 'eur',
+      payment_method_types: ['card'],
+      receipt_email: 'jenny.rosen@example.com',
+    })
   end
 
   def cancel
